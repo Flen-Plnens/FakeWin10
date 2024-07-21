@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+}
+
+@font-face {
+    font-family: 'Segoe UI Boot';
+    src: url('/assets/fonts/segoe_slboot.ttf') format('truetype');
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    position: absolute;
+    top: 25vh;
+    font-size: 18vmin;
+    color: #00A4EF;
+}
+
+.boot-animation {
+    position: absolute;
+    bottom: 17.5vh;
+    font-family: 'Segoe UI Boot', sans-serif;
+    font-size: 3vmin;
+    color: white;
+    opacity: 0;
+}
+
+.boot-animation.show {
+    opacity: 1;
+}
+
+.boot-animation::after {
+    content: "\E052";
+    animation: bootAnimation 2.711s steps(122) infinite;
+    animation-delay: 3s;
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .logo {
+        font-size: 20vmin;
+    }
+    .boot-animation {
+        font-size: 4vmin;
+    }
+}
