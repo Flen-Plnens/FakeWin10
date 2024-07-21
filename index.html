@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="black">
+    <title>Windows 10 启动动画模拟</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body onclick="enterFullscreen()">
+    <div class="container">
+        <div class="logo">
+            <i class="fab fa-windows"></i>
+        </div>
+        <div class="boot-animation"></div>
+    </div>
+    <script src="/assets/js/bootAnimation.js"></script>
+    <script src="/assets/js/delayedBootAnimation.js"></script>
+    <script>
+        function enterFullscreen() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
