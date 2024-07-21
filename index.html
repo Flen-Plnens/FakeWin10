@@ -6,6 +6,11 @@
     <title>Windows 10 启动动画模拟</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        .hide-cursor {
+            cursor: none;
+        }
+    </style>
 </head>
 <body onclick="enterFullscreen()">
     <div class="container">
@@ -18,6 +23,7 @@
     <script src="/assets/js/delayedBootAnimation.js"></script>
     <script>
         function enterFullscreen() {
+            document.documentElement.classList.add('hide-cursor');
             if (document.documentElement.requestFullscreen) {
                 document.documentElement.requestFullscreen();
             } else if (document.documentElement.mozRequestFullScreen) { // Firefox
